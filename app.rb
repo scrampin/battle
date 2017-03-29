@@ -4,7 +4,14 @@ class Battle < Sinatra::Base
   set :sessions, true
 
   get '/' do
-    "Testing infrastructure working!"
+    p params
+
+    erb :index
   end
 
+  post '/names' do
+    @player_1 = params[:player_1]
+    @player_2 = params[:player_2]
+    erb :play
+  end
 end
