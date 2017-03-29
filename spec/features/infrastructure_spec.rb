@@ -9,6 +9,6 @@ describe "homepage view", :type => :feature do
     fill_in 'player_1', :with => 'Jessica'
     fill_in 'player_2', :with => 'Steph'
     click_button 'Battle!'
-    expect(page).to have_content 'Preparing Jessica & Steph to battle to the death'
+    expect(page).to have_content 'Preparing Jessica and Steph to battle to the death'
   end
 end
