@@ -20,9 +20,9 @@
   </table>
   <h2><%= @game.current_player.name %>'s turn to attack!</h2>
   <br></br>
-  <button type="submit" name="player1_attack">
-    <a href = "/attack">
-      Slap!
-    </a>
-  </button>
+  <form action="/attack" method="get">
+    <button type="submit" name="Slap!">
+        Slap!
+    </button>
+  </form>
 </div>

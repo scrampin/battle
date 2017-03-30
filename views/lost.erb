@@ -1,0 +1,9 @@
+<% if @game.player1.dead? %>
+
+<p>SORRY ¯\_(ツ)_/¯ <%= @game.player1.name %>, you're dead!</p>
+
+<% else %>
+
+<p>SORRY ¯\_(ツ)_/¯ <%= @game.player2.name %>, you're dead!</p>
+
+<% end %>

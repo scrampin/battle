@@ -21,6 +21,10 @@ class Player
     self.hp -= DEFAULT_DAMAGE
   end
 
+  def dead?
+    hp == 0
+  end
+
   attr_writer :hp
 
 end

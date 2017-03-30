@@ -19,4 +19,12 @@ describe Player do
     end
   end
 
+  describe '#dead?' do
+    it 'should check if player has 0HP i.e. dead' do
+      10.times {ruan.takes_damage}
+      expect(ruan).to be_dead
+    end
+  end
+
+
 end
