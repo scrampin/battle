@@ -19,12 +19,4 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'calls takes_damage on another object' do
-      expect(steph).to receive(:takes_damage)
-      ruan.attack(steph)
-    end
-  end
-
-
 end

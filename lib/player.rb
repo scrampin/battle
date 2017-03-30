@@ -1,3 +1,6 @@
+# has a name and hit points
+# can be damaged
+
 class Player
 
   attr_reader :name, :hp
