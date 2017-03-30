@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="/style.css">
+
 <h1>Preparing <%= @game.player1.name %> and <%= @game.player2.name %> to battle to the death</h1>
 <div>
   <table>
@@ -15,15 +17,12 @@
         <img src="https://goo.gl/Yc6XGc" width = "200">
       </td>
     </tr>
-    <tr>
-      <td>
-        <button type="submit" name="player1_attack">
-          <a href = "/attack">
-            Slap!
-          </a>
-        </button>
-        <%= @game.current_player.name %>'s turn to attack!
-      </td>
-    </tr>
   </table>
+  <h2><%= @game.current_player.name %>'s turn to attack!</h2>
+  <br></br>
+  <button type="submit" name="player1_attack">
+    <a href = "/attack">
+      Slap!
+    </a>
+  </button>
 </div>

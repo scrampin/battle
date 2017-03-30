@@ -5,6 +5,7 @@ require './lib/game'
 class Battle < Sinatra::Base
   set :sessions, true
   enable :sessions
+  set :public_folder, File.dirname(__FILE__) + '/'
 
   get '/' do
     erb :index
@@ -13,24 +14,24 @@ class Battle < Sinatra::Base
   post '/names' do
     player1 = Player.new(params['player_1'])
     player2 = Player.new(params['player_2'])
-    p $game = Game.new(player1, player2)
+    $game = Game.new(player1, player2)
     redirect to('/play')
   end
 
   get '/play' do
     @game = $game
-    @game.switch_turns
     erb :play
   end
 
   get '/attack' do
     @game = $game
-    if @game.current_player == @game.player1
-      @game.attack(@game.player2)
-    else
-      @game.attack(@game.player1)
-    end
+    @game.attack(@game.opponent)
     erb :attack
+  end
+
+  post '/switch-turns' do
+    $game.switch_turns
+    redirect to('/play')
   end
 
 end

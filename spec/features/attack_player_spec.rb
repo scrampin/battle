@@ -14,7 +14,7 @@ feature "attack player" do
   scenario "current player name should display on play page" do
     sign_in_and_play
     click_link 'Slap!'
-    click_link 'Back to play'
+    click_button 'Back to play'
     expect(page).to have_content "Steph's turn to attack!"
   end
 

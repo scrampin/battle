@@ -3,13 +3,11 @@
 
 class Game
 
-  attr_reader :player1, :player2, :current_player, :players
+  attr_reader :current_player, :players
 
   def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
-    @players = [@player1, @player2]
-    @current_player = @player2
+    @players = [player1, player2]
+    @current_player = player1
   end
 
   def attack(player)
@@ -17,13 +15,27 @@ class Game
   end
 
   def switch_turns
-    if current_player == players.first
-      self.current_player = players.last
-    else
-      self.current_player = players.first
-    end
+    self.current_player = opponent_of(current_player)
   end
 
+  def opponent
+    opponent_of(current_player)
+  end
+
+  def player1
+    players.first
+  end
+
+  def player2
+    players.last
+  end
+
+  private
+
   attr_writer :current_player
+
+  def opponent_of(player)
+    player == players.first ? players.last : players.first
+  end
 
 end

@@ -8,7 +8,7 @@ describe Game do
 
   describe '#initialize' do
     it 'initializes with player 1 in play' do
-      expect(game.current_player).to eq ruan
+      expect(game.current_player).to eq steph
     end
   end
 
@@ -22,7 +22,13 @@ describe Game do
   describe '#switch_turns' do
     it 'switches turns between players' do
       game.switch_turns
-      expect(game.current_player).to eq steph
+      expect(game.current_player).to eq ruan
+    end
+  end
+
+  describe '#oppomemt' do
+    it 'ruan should be steph\'s opponent' do
+      expect(game.opponent).to eq ruan
     end
   end
 
