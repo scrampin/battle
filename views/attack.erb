@@ -1,2 +1,19 @@
+<% if @game.current_player == @game.player1 %>
+
 <h3><%= @game.player1.name %> slapped <%= @game.player2.name %>!</h3>
 <p><%= @game.player2.name %>'s hp: <%= @game.player2.hp %></p>
+
+<% else %>
+
+<h3><%= @game.player2.name %> slapped <%= @game.player1.name %>!</h3>
+<p><%= @game.player1.name %>'s hp: <%= @game.player1.hp %></p>
+
+<% end %>
+
+<div>
+  <button type="submit" name="back_to_play">
+    <a href = "/play">
+      Back to play
+    </a>
+  </button>
+</div>

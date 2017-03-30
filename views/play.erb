@@ -1,12 +1,28 @@
 <h1>Preparing <%= @game.player1.name %> and <%= @game.player2.name %> to battle to the death</h1>
 <div>
-  <h3> <%= @game.player2.name %>'s HP: 100 </h3>
-</div>
-
-<div class ="button">
-  <button type="submit">
-    <a href = "/attack">
-      Slap!
-    </a>
-  </button>
+  <table>
+    <th>
+  <%= @game.player1.name %>'s HP: <%= @game.player1.hp %>
+    </th>
+    <th>
+      <%= @game.player2.name %>'s HP: <%= @game.player2.hp %>
+    </th>
+    <tr>
+      <td>
+        <img src="https://goo.gl/hanHr3" width = "200">
+      </td>
+      <td>
+        <img src="https://goo.gl/Yc6XGc" width = "200">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit" name="player1_attack">
+          <a href = "/attack">
+            Slap!
+          </a>
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>
