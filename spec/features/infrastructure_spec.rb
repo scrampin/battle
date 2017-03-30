@@ -4,7 +4,7 @@ feature "homepage view" do
   end
 
   scenario 'view player names' do
-    expect(page).to have_content 'Preparing Jessica and Steph to battle to the death'
+    expect(page).to have_content 'Preparing Ruan and Steph to battle to the death'
   end
 
   scenario "displays player 2's hit points" do
